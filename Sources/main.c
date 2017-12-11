@@ -68,14 +68,14 @@ int main(void)
         acc = mma8451_getAcX();
 
     	if (acc > 50)
-    	    board_ledSet(BOARD_LED_ID_ROJO, BOARD_LED_MSG_ON);
+    	    board_setLed(BOARD_LED_ID_ROJO, BOARD_LED_MSG_ON);
     	else
-    	    board_ledSet(BOARD_LED_ID_ROJO, BOARD_LED_MSG_OFF);
+    	    board_setLed(BOARD_LED_ID_ROJO, BOARD_LED_MSG_OFF);
 
     	if (acc < -50)
-    	    board_ledSet(BOARD_LED_ID_VERDE, BOARD_LED_MSG_ON);
+    	    board_setLed(BOARD_LED_ID_VERDE, BOARD_LED_MSG_ON);
     	else
-    	    board_ledSet(BOARD_LED_ID_VERDE, BOARD_LED_MSG_OFF);
+    	    board_setLed(BOARD_LED_ID_VERDE, BOARD_LED_MSG_OFF);
    }
 }
 
