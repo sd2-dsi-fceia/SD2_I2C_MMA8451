@@ -61,11 +61,11 @@ int main(void)
     // Enable clock for PORTs, setup board clock source, config pin
     board_init();
 
-    setDataRate(DR_12p5hz);
+    mma8451_setDataRate(DR_12p5hz);
 
     while (1)
     {
-        acc = iAcclReadX();
+        acc = mma8451_getAcX();
 
     	if (acc > 50)
     	    board_ledSet(BOARD_LED_ID_ROJO, BOARD_LED_MSG_ON);

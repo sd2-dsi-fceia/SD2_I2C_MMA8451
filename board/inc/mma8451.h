@@ -75,9 +75,9 @@ void mma8451_init(void);
  **
  ** \return Lectura del aceler�metro en cent�cimas de g
  **/
-int16_t iAcclReadX(void);
+int16_t mma8451_getAcX(void);
 
-void setDataRate(DR_enum rate);
+void mma8451_setDataRate(DR_enum rate);
 
 /*==================[cplusplus]==============================================*/
 #ifdef __cplusplus

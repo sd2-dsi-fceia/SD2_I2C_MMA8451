@@ -185,13 +185,13 @@ void mma8451_init(void)
 
     /* Interrupt polarity active high, or active low. Default value: 0.
        0: Active low; 1: Active high. VER REGISTRO CTRL_REG3 */
-    PORT_HAL_SetPinIntMode(INT1_PORT, 5, kPortIntLogicZero);
+    PORT_HAL_SetPinIntMode(INT1_PORT, INT1_PIN, kPortIntLogicZero);
 
     NVIC_EnableIRQ(PORTC_PORTD_IRQn);
     NVIC_SetPriority(PORTC_PORTD_IRQn, 0);
 }
 
-void setDataRate(DR_enum rate)
+void mma8451_setDataRate(DR_enum rate)
 {
     CTRL_REG1_t ctr_reg1;
     bool estAct;
@@ -215,7 +215,7 @@ void setDataRate(DR_enum rate)
 	ctr_reg1.data = mma8451_read_reg(0x2a);
 }
 
-int16_t iAcclReadX(void)
+int16_t mma8451_getAcX(void)
 {
 	return (int16_t)(((int32_t)readX * 100) / (int32_t)4096);
 }
